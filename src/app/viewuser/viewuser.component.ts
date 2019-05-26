@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../api.service';
 
 @Component({
   selector: 'app-viewuser',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewuserComponent implements OnInit {
 
-  constructor() { }
+  private data: Array<object> = [];
+
+  constructor(private apiService : ApiService) { }
 
   ngOnInit() {
+    this.RetrieveData();
+  }
+
+  public RetrieveData(){
+
+    this.apiService.getData().subscribe( (recievedData:Array<object>)=>{
+
+        this.data=recievedData;
+        console.log(this.data);
+
+
+
+    });
   }
 
 }

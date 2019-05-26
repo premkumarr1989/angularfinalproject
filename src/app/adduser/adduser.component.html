@@ -1,11 +1,14 @@
-<table>
+
+<form (submit)="onUserCreate(userData)" #userData="ngForm">
+
+<table class="table">
 
 <tr>
 <td>
   NAME
 </td>
 <td>
-  <input type="text">
+  <input type="text" class="form-control" name="name" ngModel>
 </td>
 </tr>
 
@@ -14,7 +17,7 @@
       ROLL NO
     </td>
     <td>
-      <input type="text">
+        <input type="text" class="form-control" name="rollno" ngModel>
     </td>
     </tr>
 
@@ -23,16 +26,26 @@
           ADMISSION NUMBER
         </td>
         <td>
-          <input type="text">
+            <input type="text" class="form-control" name="adno" ngModel>
         </td>
         </tr>
+
+        <tr>
+            <td>
+              COLLEGE
+            </td>
+            <td>
+                <input type="text" class="form-control" name="college" ngModel>
+            </td>
+            </tr>
+    
 
         <tr>
             <td>
               
             </td>
             <td>
-              <BUTTon type="submit"> SUBMIT </BUTTon>
+              <BUTTon type="submit" class="btn btn-success" > SUBMIT </BUTTon>
             </td>
             </tr>
 
@@ -46,3 +59,4 @@
 
 
 </table>
+</form>
